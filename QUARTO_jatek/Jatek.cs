@@ -30,5 +30,22 @@ namespace QUARTO_jatek
                     break;
             }
         }
+        private void TovabbJatszik(DialogResult valasz)
+        {
+            /*
+            if (valasz == DialogResult.Yes)
+            {
+                
+                Jatek jatek = new Jatek();
+                this.Visible = false;
+                jatek.ShowDialog();
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+            */
+        }
     }
 }
