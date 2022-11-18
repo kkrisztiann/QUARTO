@@ -58,6 +58,7 @@
     <Compile Include="Jatek.Designer.cs">
       <DependentUpon>Jatek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Players.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
