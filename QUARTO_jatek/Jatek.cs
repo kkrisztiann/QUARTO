@@ -12,7 +12,7 @@ namespace QUARTO_jatek
 {
     public partial class Jatek : Form
     {
-        public Jatek()
+        public Jatek(string Player1, string Player2)
         {
             InitializeComponent();
         }
