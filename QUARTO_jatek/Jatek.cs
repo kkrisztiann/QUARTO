@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QUARTO_jatek
 {
-    public partial class Form1 : Form
+    public partial class Jatek : Form
     {
-        public Form1()
+        public Jatek()
         {
             InitializeComponent();
         }

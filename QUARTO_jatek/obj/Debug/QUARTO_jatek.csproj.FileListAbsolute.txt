@@ -1,0 +1,11 @@
+D:\QUATRO\QUARTO_jatek\bin\Debug\QUARTO_jatek.exe.config
+D:\QUATRO\QUARTO_jatek\bin\Debug\QUARTO_jatek.exe
+D:\QUATRO\QUARTO_jatek\bin\Debug\QUARTO_jatek.pdb
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.csprojAssemblyReference.cache
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.Form1.resources
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.Menu.resources
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.Properties.Resources.resources
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.GenerateResource.cache
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.CoreCompileInputs.cache
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.exe
+D:\QUATRO\QUARTO_jatek\obj\Debug\QUARTO_jatek.pdb
