@@ -18,10 +18,7 @@ namespace QUARTO_jatek
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Biztosan be akarod zárni a játékot? A játék elvész!", "Játék feladása", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     e.Cancel = true;
