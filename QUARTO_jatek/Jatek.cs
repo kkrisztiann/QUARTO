@@ -18,6 +18,7 @@ namespace QUARTO_jatek
         public Jatek(string Player1, string Player2)
         {
             InitializeComponent();
+            BabuFeltoltes();
             RandomKezdes(Player1, Player2);
         }
 
@@ -31,9 +32,6 @@ namespace QUARTO_jatek
            //label1.Text = player1.Nev;
            //label2.Text = player2.Nev;
         }
-            BabuFeltoltes();
-        }
-
         private void BabuFeltoltes()
         {
             List<Image> kepek = new List<Image>();
