@@ -96,6 +96,10 @@ namespace QUARTO_jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+=======
+            this.BackgroundImage = global::QUARTO_jatek.Properties.Resources.SzuperTábla;
+>>>>>>> 9e3e9b4e168d82fd19ed791eee40cef09bd7abe6
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1184, 881);
             this.Controls.Add(this.jatekosKomm);
