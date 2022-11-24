@@ -13,7 +13,7 @@ namespace QUARTO_jatek
         public bool Nagy, Fekete, Teli, Negyzet;
         public Image Kep;
 
-        public Babu(Image kep,bool nagy, bool fekete, bool teli, bool negyzet)
+        public Babu(Image kep, bool nagy, bool fekete, bool teli, bool negyzet)
         {
             Kep = kep;
             Nagy = nagy;
