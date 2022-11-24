@@ -55,9 +55,8 @@ namespace QUARTO_jatek
             };
             for (int i = 0; i < 16; i++)
             {
-                babuk.Add(new Babu(/*kepek[i], */Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
+                babuk.Add(new Babu(kepek[i], Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
             }
-            //kepek = new List<Babu>()
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

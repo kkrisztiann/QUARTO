@@ -11,11 +11,11 @@ namespace QUARTO_jatek
     class Babu
     {
         public bool Nagy, Fekete, Teli, Negyzet;
-        //public Image Kep;
+        public Image Kep;
 
         public Babu(Image kep, bool nagy, bool fekete, bool teli, bool negyzet)
         {
-            //Kep = kep;
+            Kep = kep;
             Nagy = nagy;
             Fekete = fekete;
             Teli = teli;
