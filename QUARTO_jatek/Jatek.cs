@@ -31,7 +31,7 @@ namespace QUARTO_jatek
             nevLBL1.Text = player1.Nev;
             nevLBL2.Text = player2.Nev;
 
-            jatekosKomm.Text = $"{player1.Nev} következik";
+            jatekosKomm.Text = $"{player1.Nev} következik...";
         }
         private void BabuFeltoltes()
         {

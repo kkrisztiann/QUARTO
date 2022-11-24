@@ -68,27 +68,30 @@ namespace QUARTO_jatek
             // nevLBL1
             // 
             this.nevLBL1.AutoSize = true;
-            this.nevLBL1.Location = new System.Drawing.Point(41, 22);
+            this.nevLBL1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nevLBL1.Location = new System.Drawing.Point(12, 22);
             this.nevLBL1.Name = "nevLBL1";
-            this.nevLBL1.Size = new System.Drawing.Size(35, 13);
+            this.nevLBL1.Size = new System.Drawing.Size(124, 42);
             this.nevLBL1.TabIndex = 4;
             this.nevLBL1.Text = "label1";
             // 
             // nevLBL2
             // 
             this.nevLBL2.AutoSize = true;
-            this.nevLBL2.Location = new System.Drawing.Point(1093, 22);
+            this.nevLBL2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nevLBL2.Location = new System.Drawing.Point(973, 9);
             this.nevLBL2.Name = "nevLBL2";
-            this.nevLBL2.Size = new System.Drawing.Size(35, 13);
+            this.nevLBL2.Size = new System.Drawing.Size(124, 42);
             this.nevLBL2.TabIndex = 5;
             this.nevLBL2.Text = "label2";
             // 
             // jatekosKomm
             // 
             this.jatekosKomm.AutoSize = true;
+            this.jatekosKomm.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.jatekosKomm.Location = new System.Drawing.Point(556, 22);
             this.jatekosKomm.Name = "jatekosKomm";
-            this.jatekosKomm.Size = new System.Drawing.Size(61, 13);
+            this.jatekosKomm.Size = new System.Drawing.Size(252, 42);
             this.jatekosKomm.TabIndex = 6;
             this.jatekosKomm.Text = "------------------";
             // 
@@ -96,10 +99,7 @@ namespace QUARTO_jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-=======
             this.BackgroundImage = global::QUARTO_jatek.Properties.Resources.SzuperTábla;
->>>>>>> 9e3e9b4e168d82fd19ed791eee40cef09bd7abe6
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1184, 881);
             this.Controls.Add(this.jatekosKomm);
