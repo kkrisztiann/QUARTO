@@ -21,16 +21,17 @@ namespace QUARTO_jatek
             BabuFeltoltes();
             RandomKezdes(Player1, Player2);
         }
-
         private void RandomKezdes(string Player1, string Player2)
         {
             Random r = new Random();
             int rkezd = r.Next(1, 3);
-            if  (rkezd == 1)     { player1 = new Players(0, Player1); player2 = new Players(1, Player2); }
+            if  (rkezd == 1)     { player1 = new Players(0, Player1); 
+                                           player2 = new Players(1, Player2); }
             else    { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
+            nevLBL1.Text = player1.Nev;
+            nevLBL2.Text = player2.Nev;
 
-           //label1.Text = player1.Nev;
-           //label2.Text = player2.Nev;
+            jatekosKomm.Text = $"{player1.Nev} következik";
         }
         private void BabuFeltoltes()
         {
@@ -54,8 +55,9 @@ namespace QUARTO_jatek
             };
             for (int i = 0; i < 16; i++)
             {
-                babuk.Add(new Babu(kepek[i], Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
+                babuk.Add(new Babu(/*kepek[i], */Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
             }
+            //kepek = new List<Babu>()
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -82,6 +84,11 @@ namespace QUARTO_jatek
             {
                 Close();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
