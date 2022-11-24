@@ -31,10 +31,9 @@ namespace QUARTO_jatek
                 player2 = new Players(1, Player2);
             }
             else { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
-            //nevLBL1.Text = player1.Nev;
-            //nevLBL2.Text = player2.Nev;
-            //
-            //jatekosKomm.Text = $"{player1.Nev} következik...";
+            nevLBL1.Text = player1.Nev;
+            nevLBL2.Text = player2.Nev;
+            jatekosKomm.Text = $"{player1.Nev} következik...";
         }
         private void BabuFeltoltes()
         {

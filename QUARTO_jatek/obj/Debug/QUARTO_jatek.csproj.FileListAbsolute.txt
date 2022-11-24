@@ -30,3 +30,4 @@ D:\BG\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.GenerateResource.cache
 D:\BG\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.CoreCompileInputs.cache
 D:\BG\QUARTO_jatek\obj\Debug\QUARTO_jatek.exe
 D:\BG\QUARTO_jatek\obj\Debug\QUARTO_jatek.pdb
+D:\QUARTO\QUARTO_jatek\obj\Debug\QUARTO_jatek.Jatek.resources
