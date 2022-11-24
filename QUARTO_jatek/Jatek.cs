@@ -25,17 +25,20 @@ namespace QUARTO_jatek
         {
             Random r = new Random();
             int rkezd = r.Next(1, 3);
-            if  (rkezd == 1)     { player1 = new Players(0, Player1); 
-                                           player2 = new Players(1, Player2); }
-            else    { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
-            nevLBL1.Text = player1.Nev;
-            nevLBL2.Text = player2.Nev;
-
-            jatekosKomm.Text = $"{player1.Nev} következik...";
+            if (rkezd == 1)
+            {
+                player1 = new Players(0, Player1);
+                player2 = new Players(1, Player2);
+            }
+            else { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
+            //nevLBL1.Text = player1.Nev;
+            //nevLBL2.Text = player2.Nev;
+            //
+            //jatekosKomm.Text = $"{player1.Nev} következik...";
         }
         private void BabuFeltoltes()
         {
-            List<Image> kepek = new List<Image>() { 
+            List<Image> kepek = new List<Image>() {
                 Properties.Resources.Kicsi_Piros_Lyukas_Kör,
                 Properties.Resources.Kicsi_Piros_Lyukas_Négyzet,
                 Properties.Resources.Kicsi_Piros_Teli_Kör,
@@ -83,11 +86,6 @@ namespace QUARTO_jatek
             {
                 Close();
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

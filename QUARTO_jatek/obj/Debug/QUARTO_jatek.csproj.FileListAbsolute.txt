@@ -14,7 +14,6 @@ D:\Quarto\QUARTO_jatek\bin\Debug\QUARTO_jatek.exe
 D:\Quarto\QUARTO_jatek\bin\Debug\QUARTO_jatek.pdb
 D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.csprojAssemblyReference.cache
 D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.Form1.resources
-D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.Jatek.resources
 D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.Properties.Resources.resources
 D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.GenerateResource.cache
 D:\Quarto\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.CoreCompileInputs.cache
