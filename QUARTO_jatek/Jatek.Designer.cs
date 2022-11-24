@@ -35,8 +35,9 @@ namespace QUARTO_jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 669);
+            this.ClientSize = new System.Drawing.Size(684, 761);
             this.Name = "Jatek";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jatek";
             this.ResumeLayout(false);
 
