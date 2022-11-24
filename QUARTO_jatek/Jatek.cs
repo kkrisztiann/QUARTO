@@ -62,7 +62,6 @@ namespace QUARTO_jatek
                 }
             }
         }
-
         private void RandomKezdes(string Player1, string Player2)
         {
             Random r = new Random();
@@ -73,10 +72,9 @@ namespace QUARTO_jatek
                 player2 = new Players(1, Player2);
             }
             else { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
-            //nevLBL1.Text = player1.Nev;
-            //nevLBL2.Text = player2.Nev;
-            //
-            //jatekosKomm.Text = $"{player1.Nev} következik...";
+            nevLBL1.Text = player1.Nev;
+            nevLBL2.Text = player2.Nev;
+            jatekosKomm.Text = $"{player1.Nev} választ bábút {player2.Nev} - nek...";
         }
         private void BabuFeltoltes()
         {
@@ -103,7 +101,6 @@ namespace QUARTO_jatek
                 babuk.Add(new Babu(kepek[i], Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
             }
         }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             switch (MessageBox.Show(this, "Biztosan be akarod zárni a játékot? A játék elvész!", "Játék feladása", MessageBoxButtons.YesNo))
