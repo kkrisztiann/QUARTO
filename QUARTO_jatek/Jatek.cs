@@ -24,7 +24,8 @@ namespace QUARTO_jatek
         {
             Random r = new Random();
             int rkezd = r.Next(1, 3);
-            if  (rkezd == 1)     { player1 = new Players(0, Player1); player2 = new Players(1, Player2); }
+            if  (rkezd == 1)     { player1 = new Players(0, Player1); 
+                                           player2 = new Players(1, Player2); }
             else    { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
 
            //label1.Text = player1.Nev;
