@@ -12,11 +12,13 @@ namespace QUARTO_jatek
 {
     public partial class Jatek : Form
     {
+        static List<Babu> babuk = new List<Babu>();
         static Players player1;
         static Players player2;
         public Jatek(string Player1, string Player2)
         {
             InitializeComponent();
+            BabuFeltoltes();
             RandomKezdes(Player1, Player2);
         }
 
@@ -31,6 +33,17 @@ namespace QUARTO_jatek
            //label1.Text = player1.Nev;
            //label2.Text = player2.Nev;
         }
+        private void BabuFeltoltes()
+        {
+            List<Image> kepek = new List<Image>();
+            for (int i = 0; i < 16; i++)
+            {
+                babuk.Add(new Babu(kepek[i], Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)));
+            }
+
+            //kepek = new List<Babu>()
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             switch (MessageBox.Show(this, "Biztosan be akarod zárni a játékot? A játék elvész!", "Játék feladása", MessageBoxButtons.YesNo))
