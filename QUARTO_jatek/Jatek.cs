@@ -12,6 +12,9 @@ namespace QUARTO_jatek
 {
     public partial class Jatek : Form
     {
+        static int palyameret = 4;
+        static int kepmeret = 50;
+        static int gap = 20; //px
         static List<Babu> babuk = new List<Babu>();
         static Players player1;
         static Players player2;
@@ -19,10 +22,28 @@ namespace QUARTO_jatek
         {
             InitializeComponent();
             BabuFeltoltes();
+            PalyaGeneralas();
             RandomKezdes(Player1, Player2);
         }
 
 
+        private void PalyaGeneralas()
+        {
+            Point nullpoz = new Point(100, 100);
+            for (int sor = 0; sor < palyameret; sor++)
+            {
+                for (int oszlop = 0; oszlop < palyameret; oszlop++)
+                {
+                    PictureBox mezo = new PictureBox();
+                    mezo.Size = new Size(kepmeret, kepmeret);
+                    mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret), nullpoz.Y + oszlop * (gap + kepmeret));
+                    mezo.BackColor = Color.Gray;
+                    mezo.SizeMode = PictureBoxSizeMode.Zoom;
+                    //mezo.Tag = new Point(sor, oszlop);
+                    this.Controls.Add(mezo);
+                }
+            }
+        }
 
         private void RandomKezdes(string Player1, string Player2)
         {
