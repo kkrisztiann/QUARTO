@@ -21,6 +21,9 @@ namespace QUARTO_jatek
             BabuFeltoltes();
             RandomKezdes(Player1, Player2);
         }
+
+
+
         private void RandomKezdes(string Player1, string Player2)
         {
             Random r = new Random();
