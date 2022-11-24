@@ -55,7 +55,7 @@ namespace QUARTO_jatek
             // jatekosKomm
             // 
             this.jatekosKomm.AutoSize = true;
-            this.jatekosKomm.Location = new System.Drawing.Point(220, 9);
+            this.jatekosKomm.Location = new System.Drawing.Point(186, 9);
             this.jatekosKomm.Name = "jatekosKomm";
             this.jatekosKomm.Size = new System.Drawing.Size(41, 13);
             this.jatekosKomm.TabIndex = 2;
