@@ -62,9 +62,9 @@ namespace QUARTO_jatek
             {
                 item.BackColor = Color.Transparent;
             }
-            
             Aktiv = mezo;
             Aktiv.BackColor = Color.HotPink;
+            kommunikacio.Text = " Kattintson a véglegesít gombra, ha ezt a bábút szeretné letenni!";
         }
 
         private void PalyaGeneralas()
@@ -101,8 +101,9 @@ namespace QUARTO_jatek
                 GombKlikk();
             };
             //label
-            kommunikacio.Left=(this.ClientSize.Width-kommunikacio.Size.Width)/2;
-            //kommunikacio.Size = new Size(100, 30);
+            kommunikacio.Location = new Point(0, 0);
+            kommunikacio.TextAlign = ContentAlignment.MiddleCenter;
+            kommunikacio.Size = new Size(700, 20);
             kommunikacio.Font = new Font("Arial", 12, FontStyle.Bold);
             kommunikacio.Text = "Kommunikáció";
             this.Controls.Add(kommunikacio);
