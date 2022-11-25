@@ -21,6 +21,7 @@ namespace QUARTO_jatek
         static List<PictureBox> fentibabuk = new List<PictureBox>();
         static Players player1;
         static Players player2;
+        static bool veglegesitette = false;
         Label kommunikacio = new Label();
         public Jatek(string Player1, string Player2)
         {
@@ -58,12 +59,18 @@ namespace QUARTO_jatek
 
         private void LentiClick(PictureBox mezo)
         {
+            Aktivnull();
+            Aktiv = mezo;
+            Aktiv.BackColor = Color.HotPink;
+        }
+
+        private void Aktivnull()
+        {
             foreach (PictureBox item in lentibabuk)
             {
                 item.BackColor = Color.Transparent;
             }
-            Aktiv = mezo;
-            Aktiv.BackColor = Color.HotPink;
+            Aktiv = null;
         }
 
         private void PalyaGeneralas()
@@ -83,7 +90,12 @@ namespace QUARTO_jatek
                     fentibabuk.Add(mezo);
                     mezo.Click += delegate (object sender, EventArgs e)
                     {
-
+                        if (Aktiv != null && mezo.Image==null && veglegesitette==true)
+                        {
+                            mezo.Image = Aktiv.Image;
+                            Aktivnull();
+                            veglegesitette = false;
+                        }
                     };
                 }
             }
@@ -109,7 +121,11 @@ namespace QUARTO_jatek
 
         private void GombKlikk()
         {
-            
+            if (Aktiv!=null)
+            {
+                kommunikacio.Text="Véglegesítve";
+                veglegesitette = true;
+            }
         }
 
         private void RandomKezdes(string Player1, string Player2)
