@@ -133,6 +133,7 @@ namespace QUARTO_jatek
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textbox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Menu";
             this.ResumeLayout(false);
