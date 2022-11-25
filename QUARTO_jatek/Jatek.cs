@@ -29,6 +29,7 @@ namespace QUARTO_jatek
 
         private void Lenti()
         {
+            int segedvaltozo=0;
             Point nullpoz = new Point(30, 600);
             for (int sor = 0; sor < palyameret + 4; sor++)
             {
@@ -37,7 +38,9 @@ namespace QUARTO_jatek
                     PictureBox mezo = new PictureBox();
                     mezo.Size = new Size(kepmeret - 20, kepmeret - 20);
                     mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret - 20), nullpoz.Y + oszlop * (gap + kepmeret - 20));
-                    mezo.BackColor = Color.Gray;
+                    //mezo.BackColor = Color.Gray;
+                    mezo.Image = babuk[segedvaltozo].Kep;
+                    segedvaltozo++;
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     this.Controls.Add(mezo);
                 }
