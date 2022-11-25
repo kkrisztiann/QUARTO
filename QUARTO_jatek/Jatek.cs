@@ -18,8 +18,10 @@ namespace QUARTO_jatek
         static int gap = 20; //px
         static List<Babu> babuk = new List<Babu>();
         static List<PictureBox> lentibabuk = new List<PictureBox>();
+        static List<PictureBox> fentibabuk = new List<PictureBox>();
         static Players player1;
         static Players player2;
+        Label kommunikacio = new Label();
         public Jatek(string Player1, string Player2)
         {
             InitializeComponent();
@@ -79,6 +81,7 @@ namespace QUARTO_jatek
                     mezo.BackColor = Color.Gray;
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     this.Controls.Add(mezo);
+                    fentibabuk.Add(mezo);
                     mezo.Click += delegate (object sender, EventArgs e)
                     {
 
@@ -93,8 +96,11 @@ namespace QUARTO_jatek
             veglegesit.Font = new Font("Arial", 12, FontStyle.Bold);
             veglegesit.Text = "Véglegesít";
             this.Controls.Add(veglegesit);
+            veglegesit.Click += delegate (object sender, EventArgs e)
+            {
+                GombKlikk();
+            };
             //label
-            Label kommunikacio = new Label();
             kommunikacio.Left=(this.ClientSize.Width-kommunikacio.Size.Width)/2;
             //kommunikacio.Size = new Size(100, 30);
             kommunikacio.Font = new Font("Arial", 12, FontStyle.Bold);
@@ -102,6 +108,10 @@ namespace QUARTO_jatek
             this.Controls.Add(kommunikacio);
         }
 
+        private void GombKlikk()
+        {
+            
+        }
 
         private void RandomKezdes(string Player1, string Player2)
         {
