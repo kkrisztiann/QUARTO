@@ -33,3 +33,14 @@ D:\QUARTO\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.CoreCompileInputs.cache
 D:\QUARTO\QUARTO_jatek\obj\Debug\QUARTO_jatek.exe
 D:\QUARTO\QUARTO_jatek\obj\Debug\QUARTO_jatek.pdb
 >>>>>>> a47755cbe56b3a656d898a0185576d5908dd7b22
+D:\xampp\quartyo\QUARTO_jatek\bin\Debug\QUARTO_jatek.exe.config
+D:\xampp\quartyo\QUARTO_jatek\bin\Debug\QUARTO_jatek.exe
+D:\xampp\quartyo\QUARTO_jatek\bin\Debug\QUARTO_jatek.pdb
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.csprojAssemblyReference.cache
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.Form1.resources
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.Jatek.resources
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.Properties.Resources.resources
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.GenerateResource.cache
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.csproj.CoreCompileInputs.cache
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.exe
+D:\xampp\quartyo\QUARTO_jatek\obj\Debug\QUARTO_jatek.pdb
