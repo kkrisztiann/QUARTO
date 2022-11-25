@@ -30,16 +30,15 @@ namespace QUARTO_jatek
         private void Lenti()
         {
             Point nullpoz = new Point(30, 600);
-            for (int sor = 0; sor < palyameret+4; sor++)
+            for (int sor = 0; sor < palyameret + 4; sor++)
             {
-                for (int oszlop = 0; oszlop < palyameret-2; oszlop++)
+                for (int oszlop = 0; oszlop < palyameret - 2; oszlop++)
                 {
                     PictureBox mezo = new PictureBox();
-                    mezo.Size = new Size(kepmeret-20, kepmeret-20);
-                    mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret-20), nullpoz.Y + oszlop * (gap + kepmeret-20));
+                    mezo.Size = new Size(kepmeret - 20, kepmeret - 20);
+                    mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret - 20), nullpoz.Y + oszlop * (gap + kepmeret - 20));
                     mezo.BackColor = Color.Gray;
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
-                    //mezo.Tag = new Point(sor, oszlop);
                     this.Controls.Add(mezo);
                 }
             }
@@ -57,11 +56,16 @@ namespace QUARTO_jatek
                     mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret), nullpoz.Y + oszlop * (gap + kepmeret));
                     mezo.BackColor = Color.Gray;
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
-                    //mezo.Tag = new Point(sor, oszlop);
                     this.Controls.Add(mezo);
+                    mezo.Click += delegate (object sender, EventArgs e)
+                    {
+
+                    };
                 }
             }
         }
+
+
         private void RandomKezdes(string Player1, string Player2)
         {
             Random r = new Random();
@@ -72,9 +76,7 @@ namespace QUARTO_jatek
                 player2 = new Players(1, Player2);
             }
             else { player1 = new Players(0, Player2); player2 = new Players(1, Player1); }
-            nevLBL1.Text = player1.Nev;
-            nevLBL2.Text = player2.Nev;
-            jatekosKomm.Text = $"{player1.Nev} választ bábút {player2.Nev} - nek...";
+
         }
         private void BabuFeltoltes()
         {
