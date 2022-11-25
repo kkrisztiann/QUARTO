@@ -60,6 +60,7 @@ namespace QUARTO_jatek
             {
                 item.BackColor = Color.Transparent;
             }
+            
             Aktiv = mezo;
             Aktiv.BackColor = Color.HotPink;
         }
