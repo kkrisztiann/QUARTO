@@ -12,10 +12,12 @@ namespace QUARTO_jatek
 {
     public partial class Jatek : Form
     {
+        static PictureBox Aktiv=new PictureBox();
         static int palyameret = 4;
         static int kepmeret = 80;
         static int gap = 20; //px
         static List<Babu> babuk = new List<Babu>();
+        static List<PictureBox> lentibabuk = new List<PictureBox>();
         static Players player1;
         static Players player2;
         public Jatek(string Player1, string Player2)
@@ -43,12 +45,28 @@ namespace QUARTO_jatek
                     segedvaltozo++;
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     this.Controls.Add(mezo);
+                    lentibabuk.Add(mezo);
+                    mezo.Click += delegate (object sender, EventArgs e)
+                    {
+                        LentiClick(mezo);
+                    };
                 }
             }
         }
 
+        private void LentiClick(PictureBox mezo)
+        {
+            foreach (PictureBox item in lentibabuk)
+            {
+                item.BackColor = Color.Transparent;
+            }
+            Aktiv = mezo;
+            Aktiv.BackColor = Color.HotPink;
+        }
+
         private void PalyaGeneralas()
         {
+
             Point nullpoz = new Point(155, 100);
             for (int sor = 0; sor < palyameret; sor++)
             {
@@ -66,6 +84,21 @@ namespace QUARTO_jatek
                     };
                 }
             }
+            //gomb
+            Button veglegesit = new Button();
+            veglegesit.Location = new Point(300, 530);
+            veglegesit.BackColor = Color.Cornsilk;
+            veglegesit.Size = new Size(100, 30);
+            veglegesit.Font = new Font("Arial", 12, FontStyle.Bold);
+            veglegesit.Text = "Véglegesít";
+            this.Controls.Add(veglegesit);
+            //label
+            Label kommunikacio = new Label();
+            kommunikacio.Left=(this.ClientSize.Width-kommunikacio.Size.Width)/2;
+            //kommunikacio.Size = new Size(100, 30);
+            kommunikacio.Font = new Font("Arial", 12, FontStyle.Bold);
+            kommunikacio.Text = "Kommunikáció";
+            this.Controls.Add(kommunikacio);
         }
 
 
