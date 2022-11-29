@@ -32,6 +32,7 @@ namespace clean_QUARTO
             this.components = new System.ComponentModel.Container();
             this.Odavisz = new System.Windows.Forms.Timer(this.components);
             this.ListaTimer = new System.Windows.Forms.Timer(this.components);
+            this.Megjelenit = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // Odavisz
@@ -43,6 +44,11 @@ namespace clean_QUARTO
             // 
             this.ListaTimer.Interval = 1;
             this.ListaTimer.Tick += new System.EventHandler(this.ListaTimer_Tick);
+            // 
+            // Megjelenit
+            // 
+            this.Megjelenit.Interval = 1;
+            this.Megjelenit.Tick += new System.EventHandler(this.Megjelenit_Tick);
             // 
             // Jatek
             // 
@@ -61,5 +67,6 @@ namespace clean_QUARTO
 
         private System.Windows.Forms.Timer Odavisz;
         private System.Windows.Forms.Timer ListaTimer;
+        private System.Windows.Forms.Timer Megjelenit;
     }
 }

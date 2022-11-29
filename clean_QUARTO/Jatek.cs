@@ -29,6 +29,8 @@ namespace clean_QUARTO
         static int leszamlalo = 0;
         static int irany = 10;
         static int max = 25;
+        static int jelenitszamlalo = 0;
+        static Mezo Megjelenitendo;
 
 
         public Jatek(string player1, string player2)
@@ -108,7 +110,7 @@ namespace clean_QUARTO
                     Mezo mezo = new Mezo(new Point(sor, oszlop));
                     mezo.Size = new Size(kepmeret, kepmeret);
                     mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret), nullpoz.Y + oszlop * (gap + kepmeret));
-                    mezo.BackColor = Color.Gray;
+                    mezo.BackColor = Color.FromArgb(100, 215, 215, 215);
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     Matrix[sor, oszlop] = mezo;
                     this.Controls.Add(mezo);
@@ -120,9 +122,8 @@ namespace clean_QUARTO
                             mezo.Image = Kijelolt.Image;
                             mezo.Tipus = Kijelolt.Tipus;
                             mezo.Szabad = false;
-                            mezo.BackColor = Color.Transparent;
-                            Kijelolt.Visible = false;
-                            Kijelolt = null;
+                            Megjelenitendo = mezo;
+                            Megjelenit.Start();
                             irany = -10;
                             ListaTimer.Start();
                             WinCheck(mezo);
@@ -131,6 +132,29 @@ namespace clean_QUARTO
                     Kerekit(mezo, mezo.Size.Width);
                     
                 }
+            }
+        }
+
+        private void Megjelenit_Tick(object sender, EventArgs e)
+        {
+            double size = Kijelolt.Size.Width - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Width);
+            Kijelolt.Size = new Size(Convert.ToInt32(size), Convert.ToInt32(size));
+            double xHelyzet = Kijelolt.Location.X + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Width / 2);
+            double yHelyzet = Kijelolt.Location.Y + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Height / 2);
+            Kijelolt.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
+
+
+
+            jelenitszamlalo++;
+            if (jelenitszamlalo >= max)
+            {
+                Megjelenitendo.Size = new Size(kepmeret, kepmeret);
+                Kijelolt.Size = new Size(0, 0);
+                Megjelenitendo = null;
+                Kijelolt.Visible = false;
+                Kijelolt = null;
+                jelenitszamlalo = 0;
+                Megjelenit.Stop();
             }
         }
 
@@ -194,12 +218,15 @@ namespace clean_QUARTO
 
         private void Kijelol(Mezo mezo)
         {
-            if (Aktiv != null)
+            if (Kijelolt != mezo)
             {
-                Aktiv.BackColor = Color.Transparent;
+                if (Aktiv != null)
+                {
+                    Aktiv.BackColor = Color.Transparent;
+                }
+                Aktiv = mezo;
+                Aktiv.BackColor = Color.Gray;
             }
-            Aktiv = mezo;
-            Aktiv.BackColor = Color.Gray;
         }
 
         private void Jatek_FormClosing(object sender, FormClosingEventArgs e)
