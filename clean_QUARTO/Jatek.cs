@@ -28,9 +28,10 @@ namespace clean_QUARTO
         static int odaszamlalo = 0;
         static int leszamlalo = 0;
         static int irany = 10;
-        static int max = 25;
+        static int max = 50;
         static int jelenitszamlalo = 0;
         static Mezo Megjelenitendo;
+        static Point eredeti;
 
 
         public Jatek(string player1, string player2)
@@ -116,13 +117,14 @@ namespace clean_QUARTO
                     this.Controls.Add(mezo);
                     mezo.Click += delegate (object sender, EventArgs e)
                     {
-                        if (mezo.Szabad && Kijelolt != null)
+                        if (mezo.Szabad && Kijelolt != null && leszamlalo == 0 && odaszamlalo == 0 && jelenitszamlalo == 0)
                         {
                             Aktiv = null;
                             mezo.Image = Kijelolt.Image;
                             mezo.Tipus = Kijelolt.Tipus;
                             mezo.Szabad = false;
                             Megjelenitendo = mezo;
+                            eredeti = Megjelenitendo.Location;
                             Megjelenit.Start();
                             irany = -10;
                             ListaTimer.Start();
@@ -142,8 +144,13 @@ namespace clean_QUARTO
             double xHelyzet = Kijelolt.Location.X + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Width / 2);
             double yHelyzet = Kijelolt.Location.Y + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Height / 2);
             Kijelolt.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
-
-
+            /*
+            size = (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (kepmeret);
+            Megjelenitendo.Size = new Size(Convert.ToInt32(size), Convert.ToInt32(size));
+            xHelyzet = eredeti.X+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Width / 2);
+            yHelyzet = eredeti.Y+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Height / 2);
+            Megjelenitendo.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
+            */
 
             jelenitszamlalo++;
             if (jelenitszamlalo >= max)
