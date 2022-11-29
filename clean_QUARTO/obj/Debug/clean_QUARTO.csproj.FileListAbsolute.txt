@@ -1,0 +1,11 @@
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.exe.config
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.exe
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.pdb
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.AssemblyReference.cache
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Form1.resources
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Properties.Resources.resources
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.GenerateResource.cache
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.CoreCompileInputs.cache
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.exe
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.pdb
+D:\xampp\htdocs\2-14 SZFT 2022-2023\Projektek\clean_QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Jatek.resources
