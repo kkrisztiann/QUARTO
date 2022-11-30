@@ -15,16 +15,16 @@ namespace clean_QUARTO
     {
         static int palyameret = 4;
         static int kepmeret = 80; //px
-        static int gap = 20; //px
+        static int gap = 0; //px
         static List<Mezo> lista = new List<Mezo>();
         static Mezo[,] Matrix = new Mezo[palyameret, palyameret];
-        static Point nullpoz = new Point(150, 100);
+        static Point nullpoz = new Point(310, 100);
         static Mezo Aktiv = null;
         static Button Btn;
 
         static Mezo Kijelolt = null;
-        static Size Nagyobb = new Size(kepmeret, kepmeret);
-        static Point Cel = new Point(nullpoz.X + Matrix.GetLength(0) * ((gap + kepmeret) / 2) - Nagyobb.Width / 2, nullpoz.Y + Matrix.GetLength(0) * (Nagyobb.Height + gap));
+        static int Nagyobb = 60;
+        static Point Cel = new Point(nullpoz.X + kepmeret/2 - Nagyobb / 2, nullpoz.Y + (Matrix.GetLength(0)*2-1) * (kepmeret + gap) + 20);
         static int odaszamlalo = 0;
         static int leszamlalo = 0;
         static int irany = 10;
@@ -49,7 +49,7 @@ namespace clean_QUARTO
             Button btn = new Button();
             btn.Size = new Size(120, 30);
             btn.Text = "Véglegesít";
-            btn.Location = new Point(nullpoz.X + Matrix.GetLength(0) * ((gap + kepmeret) / 2) - btn.Size.Width / 2 - gap / 2, nullpoz.Y + Matrix.GetLength(1) * (gap + kepmeret));
+            btn.Location = new Point(nullpoz.X + kepmeret/2 - (btn.Size.Width + gap) / 2, nullpoz.Y + (Matrix.GetLength(1)*2-1) * (gap + kepmeret) + 20);
             this.Controls.Add(btn);
             Btn = btn;
             btn.Click += delegate (object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace clean_QUARTO
                 {
                     Mezo mezo = new Mezo(new Point(sor, oszlop));
                     mezo.Size = new Size(kepmeret, kepmeret);
-                    mezo.Location = new Point(nullpoz.X + sor * (gap + kepmeret), nullpoz.Y + oszlop * (gap + kepmeret));
+                    mezo.Location = new Point(nullpoz.X - sor * ((gap+kepmeret)) + oszlop*(gap + kepmeret), nullpoz.Y + sor*(gap + kepmeret) + oszlop * (gap + kepmeret));
                     mezo.BackColor = Color.FromArgb(100, 215, 215, 215);
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     Matrix[sor, oszlop] = mezo;
@@ -257,6 +257,7 @@ namespace clean_QUARTO
 
         private void BabuFeltoltes()
         {
+            int lentgap = 20;
             List<Image> kepek = new List<Image>() {
                 Properties.Resources.Kicsi_Piros_Lyukas_Kör,
                 Properties.Resources.Kicsi_Piros_Lyukas_Négyzet,
@@ -276,15 +277,15 @@ namespace clean_QUARTO
                 Properties.Resources.Nagy_Fekete_Teli_Négyzet
             };
 
-            Point nullpozi = new Point(nullpoz.X + Matrix.GetLength(0) * ((gap + kepmeret)/2) - (kepek.Count*(gap+60)/4), nullpoz.Y + Matrix.GetLength(1)* (gap + kepmeret)+50);
+            Point nullpozi = new Point(nullpoz.X + kepmeret / 2 - (kepek.Count * (lentgap + Nagyobb) / 4), nullpoz.Y + (Matrix.GetLength(1)*2-1) * (gap + kepmeret) + 50);
             for (int i = 0; i < kepek.Count; i++)
             {
                 Mezo mezo = new Mezo($"{((i / 8) % 2)}{(i / 4) % 2}{(i / 2) % 2}{i % 2}", new Point(-1, -1));
                 mezo.Image = kepek[i];
                 lista.Add(mezo);
-                mezo.Size = new Size(60, 60);
+                mezo.Size = new Size(Nagyobb, Nagyobb);
                 mezo.SizeMode = PictureBoxSizeMode.StretchImage;
-                mezo.Location = new Point(nullpozi.X + (i / 2) * (mezo.Size.Width + gap), nullpozi.Y + (i % 2 == 1 ? 0 : 1) * (mezo.Size.Width + gap));
+                mezo.Location = new Point(nullpozi.X + (i / 2) * (mezo.Size.Width + lentgap), nullpozi.Y + (i % 2 == 1 ? 0 : 1) * (mezo.Size.Width));
                 this.Controls.Add(mezo);
                 mezo.Click += delegate (object sender, EventArgs e) 
                 {
