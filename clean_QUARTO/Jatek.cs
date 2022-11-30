@@ -184,7 +184,7 @@ namespace clean_QUARTO
                                     (L / --',----._
                                         |          \\
                                        : / -\ .'-'\ / |
-                                         \\, ||    \|
+                                        \\, ||    \|
                                          \/ ||    ||
         */
         private bool WinCheck(Mezo mezo)
@@ -350,7 +350,7 @@ namespace clean_QUARTO
 
         private void Kijelol(Mezo mezo)
         {
-            if (Kijelolt != mezo)
+            if (Kijelolt == null)
             {
                 if (Aktiv != null)
                 {
