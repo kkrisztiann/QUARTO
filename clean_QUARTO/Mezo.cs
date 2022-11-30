@@ -12,9 +12,9 @@ namespace clean_QUARTO
     {
         public Point Helyzet;
         public bool Szabad;
-        public Babu Tipus;
+        public string Tipus;
 
-        public Mezo(Babu babu, Point hely){
+        public Mezo(string babu, Point hely){
             Helyzet = hely;
             Szabad = true;
             Tipus = babu;

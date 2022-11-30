@@ -28,7 +28,7 @@ namespace clean_QUARTO
         static int odaszamlalo = 0;
         static int leszamlalo = 0;
         static int irany = 10;
-        static int max = 50;
+        static int max = 25;
         static int jelenitszamlalo = 0;
         static Mezo Megjelenitendo;
         static Point eredeti;
@@ -144,13 +144,13 @@ namespace clean_QUARTO
             double xHelyzet = Kijelolt.Location.X + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Width / 2);
             double yHelyzet = Kijelolt.Location.Y + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Height / 2);
             Kijelolt.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
-            /*
+            
             size = (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (kepmeret);
             Megjelenitendo.Size = new Size(Convert.ToInt32(size), Convert.ToInt32(size));
             xHelyzet = eredeti.X+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Width / 2);
             yHelyzet = eredeti.Y+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Height / 2);
             Megjelenitendo.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
-            */
+            
 
             jelenitszamlalo++;
             if (jelenitszamlalo >= max)
@@ -194,7 +194,7 @@ namespace clean_QUARTO
             Point nullpozi = new Point(nullpoz.X + Matrix.GetLength(0) * ((gap + kepmeret)/2) - (kepek.Count*(gap+60)/4), nullpoz.Y + Matrix.GetLength(1)* (gap + kepmeret)+50);
             for (int i = 0; i < kepek.Count; i++)
             {
-                Mezo mezo = new Mezo(new Babu(Convert.ToBoolean((i / 8) % 2), Convert.ToBoolean((i / 4) % 2), Convert.ToBoolean((i / 2) % 2), Convert.ToBoolean(i % 2)), new Point(-1, -1));
+                Mezo mezo = new Mezo($"{((i / 8) % 2)}{(i / 4) % 2}{(i / 2) % 2}{i % 2}", new Point(-1, -1));
                 mezo.Image = kepek[i];
                 lista.Add(mezo);
                 mezo.Size = new Size(60, 60);
@@ -205,7 +205,7 @@ namespace clean_QUARTO
                 {
                     Kijelol(mezo);   
                 };
-                if (mezo.Tipus.Negyzet) Kerekit(mezo, mezo.Size.Width - 30);
+                if (mezo.Tipus[3] == '1') Kerekit(mezo, mezo.Size.Width - 30);
                 else Kerekit(mezo, mezo.Size.Width);
                 mezo.Name = i.ToString();
             }
