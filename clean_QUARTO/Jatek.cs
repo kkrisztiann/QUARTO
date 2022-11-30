@@ -21,7 +21,6 @@ namespace clean_QUARTO
         static Point nullpoz = new Point(310, 100);
         static Mezo Aktiv = null;
         static Button Btn;
-
         static Mezo Kijelolt = null;
         static int Nagyobb = 60;
         static Point Cel = new Point(nullpoz.X + kepmeret/2 - Nagyobb / 2, nullpoz.Y + (Matrix.GetLength(0)*2-1) * (kepmeret + gap) + 20);
@@ -124,13 +123,18 @@ namespace clean_QUARTO
                             mezo.Tipus = Kijelolt.Tipus;
                             mezo.Szabad = false;
                             Megjelenitendo = mezo;
+                            lista.Remove(Kijelolt);
                             eredeti = Megjelenitendo.Location;
                             Megjelenit.Start();
                             irany = -10;
                             ListaTimer.Start();
                             if (WinCheck(mezo))
                             {
-                                MessageBox.Show("cica");
+                                MessageBox.Show("Nyertél ügyi bügyi");
+                            }
+                            else if (lista.Count == 0)
+                            {
+                                MessageBox.Show("Döntetlen bügyi");
                             }
                         }
                     };
@@ -183,21 +187,41 @@ namespace clean_QUARTO
                 if (FuggolegesWinCheck(winszamlalo, mezo, j)) return true;
             }
             //atlo1
-            for (int j = 0; j < palyameret; j++)
+            if (mezo.Helyzet.X==mezo.Helyzet.Y)
             {
-                if (Atlo1WinCheck(winszamlalo, mezo, j)) return true;
+                for (int j = 0; j < palyameret; j++)
+                {
+                    if (Atlo1WinCheck(winszamlalo, mezo, j)) return true;
+                }
             }
             //atlo2
-            for (int j = 0; j < palyameret; j++)
+            if (mezo.Helyzet.X+mezo.Helyzet.Y==palyameret-1)
             {
-                if (Atlo2WinCheck(winszamlalo, mezo, j)) return true;
+                for (int j = 0; j < palyameret; j++)
+                {
+                    if (Atlo2WinCheck(winszamlalo, mezo, j)) return true;
+                }
             }
-
             return false;
         }
 
         private bool Atlo2WinCheck(int winszamlalo, Mezo mezo, int j)
         {
+            int seged = 0;
+            winszamlalo = 0;
+            for (int i = palyameret-1; i > -1; i--)
+            {
+                if (!Matrix[seged,i].Szabad)
+                {
+                    if (Matrix[seged,i].Tipus[j] == mezo.Tipus[j])
+                    {
+                        winszamlalo++;
+                        if (winszamlalo == palyameret) return true;
+                    }
+                }
+                else break;
+                seged++;
+            }
             return false;
         }
 
@@ -326,7 +350,5 @@ namespace clean_QUARTO
         {
             Application.Exit();
         }
-
-
     }
 }
