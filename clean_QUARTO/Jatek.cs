@@ -26,7 +26,7 @@ namespace clean_QUARTO
         static Point Cel = new Point(nullpoz.X + kepmeret/2 - Nagyobb / 2, nullpoz.Y + (Matrix.GetLength(0)*2-1) * (kepmeret + gap) + 20);
         static int odaszamlalo = 0;
         static int leszamlalo = 0;
-        static int irany = 10;
+        static int irany = -2;
         static int max = 25;
         static int jelenitszamlalo = 0;
         static Mezo Megjelenitendo;
@@ -60,7 +60,7 @@ namespace clean_QUARTO
                     Aktiv = null;
                     Kijelolt.BackColor = Color.Transparent;
                     Kijelolt.BringToFront();
-                    irany = 10;
+                    irany = -irany;
                     ListaTimer.Start();
                     Odavisz.Start();
                 }
@@ -129,7 +129,7 @@ namespace clean_QUARTO
                             lista.Remove(Kijelolt);
                             eredeti = Megjelenitendo.Location;
                             Megjelenit.Start();
-                            irany = -10;
+                            irany = -irany;
                             ListaTimer.Start();
                             if (WinCheck(mezo))
                             {
