@@ -65,6 +65,8 @@ namespace clean_QUARTO
                     Odavisz.Start();
                 }
             };
+            hatter.Size = new Size((palyameret * 2 - 1) * kepmeret + 30, (palyameret * 2 - 1) * kepmeret + 30);
+            hatter.Location = new Point(nullpoz.X + kepmeret / 2 - hatter.Width / 2, nullpoz.Y - 15);
         }
 
         private void Odavisz_Tick(object sender, EventArgs e)
@@ -114,6 +116,7 @@ namespace clean_QUARTO
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     Matrix[sor, oszlop] = mezo;
                     this.Controls.Add(mezo);
+                    mezo.BringToFront();
                     mezo.Click += delegate (object sender, EventArgs e)
                     {
                         if (mezo.Szabad && Kijelolt != null && leszamlalo == 0 && odaszamlalo == 0 && jelenitszamlalo == 0)
@@ -163,6 +166,7 @@ namespace clean_QUARTO
             if (jelenitszamlalo >= max)
             {
                 Megjelenitendo.Size = new Size(kepmeret, kepmeret);
+                Megjelenitendo.Location = eredeti;
                 Kijelolt.Size = new Size(0, 0);
                 Megjelenitendo = null;
                 Kijelolt.Visible = false;
@@ -171,7 +175,18 @@ namespace clean_QUARTO
                 Megjelenit.Stop();
             }
         }
-
+        /*
+                                      <=======]}======
+                                        --.   /|
+                                       _\"/_.'/
+                                     .'._._,.'
+                                     :/ \{}/
+                                    (L / --',----._
+                                        |          \\
+                                       : / -\ .'-'\ / |
+                                         \\, ||    \|
+                                         \/ ||    ||
+        */
         private bool WinCheck(Mezo mezo)
         {
             int winszamlalo = 0;

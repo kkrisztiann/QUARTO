@@ -141,5 +141,8 @@
   <ItemGroup>
     <None Include="Resources\Nagy_Piros_Teli_Négyzet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kör.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
