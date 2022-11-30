@@ -128,7 +128,10 @@ namespace clean_QUARTO
                             Megjelenit.Start();
                             irany = -10;
                             ListaTimer.Start();
-                            WinCheck(mezo);
+                            if (WinCheck(mezo))
+                            {
+                                MessageBox.Show("cica");
+                            }
                         }
                     };
                     Kerekit(mezo, mezo.Size.Width);
@@ -165,9 +168,91 @@ namespace clean_QUARTO
             }
         }
 
-        private void WinCheck(Mezo mezo)
+        private bool WinCheck(Mezo mezo)
         {
-            
+            int winszamlalo = 0;
+            //vízszintes
+            for (int j = 0; j < palyameret; j++)
+            {
+                if (VizszintWinCheck(winszamlalo,mezo, j)) return true;
+                
+            }
+            //függőleges
+            for (int j = 0; j < palyameret; j++)
+            {
+                if (FuggolegesWinCheck(winszamlalo, mezo, j)) return true;
+            }
+            //atlo1
+            for (int j = 0; j < palyameret; j++)
+            {
+                if (Atlo1WinCheck(winszamlalo, mezo, j)) return true;
+            }
+            //atlo2
+            for (int j = 0; j < palyameret; j++)
+            {
+                if (Atlo2WinCheck(winszamlalo, mezo, j)) return true;
+            }
+
+            return false;
+        }
+
+        private bool Atlo2WinCheck(int winszamlalo, Mezo mezo, int j)
+        {
+            return false;
+        }
+
+        private bool Atlo1WinCheck(int winszamlalo, Mezo mezo, int j)
+        {
+            winszamlalo = 0;
+            for (int i = 0; i < palyameret; i++)
+            {
+                if (!Matrix[i, i].Szabad)
+                {
+                    if (Matrix[i,i].Tipus[j] == mezo.Tipus[j])
+                    {
+                        winszamlalo++;
+                        if (winszamlalo == palyameret) return true;
+                    }
+                }
+                else break;
+            }
+            return false;
+        }
+
+        private bool FuggolegesWinCheck(int winszamlalo, Mezo mezo, int j)
+        {
+            winszamlalo = 0;
+            for (int i = 0; i < palyameret; i++)
+            {
+                if (!Matrix[mezo.Helyzet.X, i].Szabad)
+                {
+                    if (Matrix[mezo.Helyzet.X, i].Tipus[j] == mezo.Tipus[j])
+                    {
+                        winszamlalo++;
+                        if (winszamlalo == palyameret) return true;
+                    }
+                }
+                else break;
+            }
+            return false;
+        }
+
+        private bool VizszintWinCheck(int winszamlalo, Mezo mezo, int j)
+        {
+            winszamlalo = 0;
+            for (int i = 0; i < palyameret; i++)
+            {
+                if (!Matrix[i, mezo.Helyzet.Y].Szabad)
+                {
+                    if (Matrix[i, mezo.Helyzet.Y].Tipus[j] == mezo.Tipus[j])
+                    {
+                        winszamlalo++;
+                        if (winszamlalo == palyameret) return true;
+                    }
+                }
+                else return false;
+            }
+            return false;
         }
 
         private void BabuFeltoltes()

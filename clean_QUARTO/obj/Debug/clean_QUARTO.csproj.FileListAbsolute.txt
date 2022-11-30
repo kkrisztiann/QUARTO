@@ -31,3 +31,14 @@ D:\Tananyag\Aszalk\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.GenerateRes
 D:\Tananyag\Aszalk\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.CoreCompileInputs.cache
 D:\Tananyag\Aszalk\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.exe
 D:\Tananyag\Aszalk\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.pdb
+D:\Quarto\clean_QUARTO\bin\Debug\clean_QUARTO.exe.config
+D:\Quarto\clean_QUARTO\bin\Debug\clean_QUARTO.exe
+D:\Quarto\clean_QUARTO\bin\Debug\clean_QUARTO.pdb
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.AssemblyReference.cache
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.Form1.resources
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.Jatek.resources
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.Properties.Resources.resources
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.GenerateResource.cache
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.CoreCompileInputs.cache
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.exe
+D:\Quarto\clean_QUARTO\obj\Debug\clean_QUARTO.pdb
