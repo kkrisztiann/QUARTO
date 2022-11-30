@@ -143,6 +143,16 @@ namespace clean_QUARTO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap kör {
+            get {
+                object obj = ResourceManager.GetObject("kör", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Nagy_Fekete_Lyukas_Kör {
             get {
                 object obj = ResourceManager.GetObject("Nagy_Fekete_Lyukas_Kör", resourceCulture);
