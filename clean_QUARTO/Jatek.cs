@@ -14,7 +14,7 @@ namespace clean_QUARTO
     public partial class Jatek : Form
     {
         static int palyameret = 4;
-        static int kepmeret = 80; //px
+        static int kepmeret = 70; //px
         static int gap = 0; //px
         static List<Mezo> lista = new List<Mezo>();
         static Mezo[,] Matrix = new Mezo[palyameret, palyameret];
@@ -31,6 +31,7 @@ namespace clean_QUARTO
         static int jelenitszamlalo = 0;
         static Mezo Megjelenitendo;
         static Point eredeti;
+        static List<string> jatekosok;
 
 
         public Jatek(string player1, string player2)
@@ -40,6 +41,8 @@ namespace clean_QUARTO
             BabuFeltoltes();
             PalyaGeneralas();
             VeglegesitGomb();
+            jatekosok = new List<string>() { player1, player2 };
+            playerName.Text = $"Következik:\n{jatekosok[new Random().Next(0,2)]}";
 
         }
 
@@ -63,6 +66,7 @@ namespace clean_QUARTO
                     irany = -irany;
                     ListaTimer.Start();
                     Odavisz.Start();
+                    playerName.Text = $"Következik:\n{jatekosok.Find(x => x != playerName.Text.Split('\n')[1])}";
                 }
             };
             hatter.Size = new Size((palyameret * 2 - 1) * kepmeret + 30, (palyameret * 2 - 1) * kepmeret + 30);
@@ -128,12 +132,17 @@ namespace clean_QUARTO
                             Megjelenitendo = mezo;
                             lista.Remove(Kijelolt);
                             eredeti = Megjelenitendo.Location;
+                            Megjelenitendo.Size = new Size(0, 0);
                             Megjelenit.Start();
                             irany = -irany;
                             ListaTimer.Start();
                             if (WinCheck(mezo))
                             {
-                                MessageBox.Show("Nyertél ügyi bügyi");
+                                while (DialogResult.Yes != MessageBox.Show("Nyertél Szeretnéd bezárni a játékot?", "Vére", MessageBoxButtons.YesNo))
+                                {
+
+                                }
+
                             }
                             else if (lista.Count == 0)
                             {
@@ -160,12 +169,13 @@ namespace clean_QUARTO
             xHelyzet = eredeti.X+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Width / 2);
             yHelyzet = eredeti.Y+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Height / 2);
             Megjelenitendo.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
-            
+            Kerekit(Megjelenitendo, Convert.ToInt32(size));
 
             jelenitszamlalo++;
             if (jelenitszamlalo >= max)
             {
                 Megjelenitendo.Size = new Size(kepmeret, kepmeret);
+                Kerekit(Megjelenitendo, Megjelenitendo.Size.Width);
                 Megjelenitendo.Location = eredeti;
                 Kijelolt.Size = new Size(0, 0);
                 Megjelenitendo = null;
@@ -341,11 +351,17 @@ namespace clean_QUARTO
             Rectangle r = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             int d = size;
-            gp.AddArc(r.X, r.Y, d, d, 180, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
-            gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
-            pictureBox.Region = new Region(gp);
+            try
+            {
+                gp.AddArc(r.X, r.Y, d, d, 180, 90);
+                gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
+                gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
+                gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
+                pictureBox.Region = new Region(gp);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void Kijelol(Mezo mezo)
