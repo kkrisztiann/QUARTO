@@ -34,6 +34,7 @@ namespace clean_QUARTO
             this.ListaTimer = new System.Windows.Forms.Timer(this.components);
             this.Megjelenit = new System.Windows.Forms.Timer(this.components);
             this.hatter = new System.Windows.Forms.PictureBox();
+            this.playerName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hatter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +59,27 @@ namespace clean_QUARTO
             this.hatter.Image = global::clean_QUARTO.Properties.Resources.kör;
             this.hatter.Location = new System.Drawing.Point(36, 52);
             this.hatter.Name = "hatter";
-            this.hatter.Size = new System.Drawing.Size(603, 459);
+            this.hatter.Size = new System.Drawing.Size(0, 0);
             this.hatter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hatter.TabIndex = 0;
             this.hatter.TabStop = false;
+            // 
+            // playerName
+            // 
+            this.playerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.playerName.Location = new System.Drawing.Point(2, 9);
+            this.playerName.Name = "playerName";
+            this.playerName.Size = new System.Drawing.Size(680, 63);
+            this.playerName.TabIndex = 1;
+            this.playerName.Text = "Player";
+            this.playerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Jatek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 861);
+            this.ClientSize = new System.Drawing.Size(684, 881);
+            this.Controls.Add(this.playerName);
             this.Controls.Add(this.hatter);
             this.Name = "Jatek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -84,5 +96,6 @@ namespace clean_QUARTO
         private System.Windows.Forms.Timer ListaTimer;
         private System.Windows.Forms.Timer Megjelenit;
         private System.Windows.Forms.PictureBox hatter;
+        private System.Windows.Forms.Label playerName;
     }
 }
