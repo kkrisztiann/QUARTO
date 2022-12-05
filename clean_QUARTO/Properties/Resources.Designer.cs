@@ -63,6 +63,26 @@ namespace clean_QUARTO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap hatter {
+            get {
+                object obj = ResourceManager.GetObject("hatter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon ikon1 {
+            get {
+                object obj = ResourceManager.GetObject("ikon1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Kicsi_Fekete_Lyukas_Kör {
             get {
                 object obj = ResourceManager.GetObject("Kicsi_Fekete_Lyukas_Kör", resourceCulture);

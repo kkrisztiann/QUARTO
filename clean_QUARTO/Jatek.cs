@@ -133,11 +133,13 @@ namespace clean_QUARTO
                             ListaTimer.Start();
                             if (WinCheck(mezo))
                             {
-                                MessageBox.Show("Nyertél ügyi bügyi");
+                                MessageBox.Show("Nyertél! ");
+                                Close();
                             }
                             else if (lista.Count == 0)
                             {
-                                MessageBox.Show("Döntetlen bügyi");
+                                MessageBox.Show("Döntetlen! ");
+                                Close();
                             }
                         }
                     };
@@ -223,7 +225,6 @@ namespace clean_QUARTO
         private bool Atlo2WinCheck(int winszamlalo, Mezo mezo, int j)
         {
             int seged = 0;
-            winszamlalo = 0;
             for (int i = palyameret-1; i > -1; i--)
             {
                 if (!Matrix[seged,i].Szabad)
@@ -242,7 +243,6 @@ namespace clean_QUARTO
 
         private bool Atlo1WinCheck(int winszamlalo, Mezo mezo, int j)
         {
-            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[i, i].Szabad)
@@ -260,7 +260,6 @@ namespace clean_QUARTO
 
         private bool FuggolegesWinCheck(int winszamlalo, Mezo mezo, int j)
         {
-            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[mezo.Helyzet.X, i].Szabad)
@@ -278,7 +277,6 @@ namespace clean_QUARTO
 
         private bool VizszintWinCheck(int winszamlalo, Mezo mezo, int j)
         {
-            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[i, mezo.Helyzet.Y].Szabad)

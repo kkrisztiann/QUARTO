@@ -29,12 +29,14 @@ namespace clean_QUARTO
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label3 = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.player2Name = new System.Windows.Forms.TextBox();
             this.player1Name = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -42,7 +44,7 @@ namespace clean_QUARTO
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(465, 304);
+            this.label3.Location = new System.Drawing.Point(22, 367);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(289, 13);
             this.label3.TabIndex = 16;
@@ -52,7 +54,7 @@ namespace clean_QUARTO
             // 
             this.startBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.startBtn.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.startBtn.Location = new System.Drawing.Point(654, 153);
+            this.startBtn.Location = new System.Drawing.Point(388, 339);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(149, 57);
             this.startBtn.TabIndex = 15;
@@ -66,7 +68,7 @@ namespace clean_QUARTO
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(-3, 194);
+            this.label2.Location = new System.Drawing.Point(53, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(364, 40);
             this.label2.TabIndex = 14;
@@ -78,7 +80,7 @@ namespace clean_QUARTO
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-3, 133);
+            this.label1.Location = new System.Drawing.Point(53, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(297, 40);
             this.label1.TabIndex = 13;
@@ -86,10 +88,10 @@ namespace clean_QUARTO
             // 
             // player2Name
             // 
-            this.player2Name.BackColor = System.Drawing.Color.White;
+            this.player2Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.player2Name.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.player2Name.ForeColor = System.Drawing.Color.Black;
-            this.player2Name.Location = new System.Drawing.Point(367, 194);
+            this.player2Name.Location = new System.Drawing.Point(423, 109);
             this.player2Name.Name = "player2Name";
             this.player2Name.Size = new System.Drawing.Size(281, 29);
             this.player2Name.TabIndex = 12;
@@ -98,27 +100,43 @@ namespace clean_QUARTO
             // 
             // player1Name
             // 
-            this.player1Name.BackColor = System.Drawing.Color.White;
+            this.player1Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.player1Name.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.player1Name.ForeColor = System.Drawing.Color.Black;
-            this.player1Name.Location = new System.Drawing.Point(367, 144);
+            this.player1Name.Location = new System.Drawing.Point(423, 59);
             this.player1Name.Name = "player1Name";
             this.player1Name.Size = new System.Drawing.Size(281, 29);
             this.player1Name.TabIndex = 11;
             this.player1Name.Text = "Player1";
             this.player1Name.TextChanged += new System.EventHandler(this.player1Name_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(822, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 411);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.player2Name);
             this.Controls.Add(this.player1Name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -134,6 +152,7 @@ namespace clean_QUARTO
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox player2Name;
         private System.Windows.Forms.TextBox player1Name;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -144,5 +144,14 @@
   <ItemGroup>
     <None Include="Resources\kör.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ikon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ikon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hatter.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,5 +40,10 @@ namespace clean_QUARTO
             }
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string message = "Quarto társasjáték kezdésekor a tábla üres. A kezdési jogot megszerzett játékos nem lép, hanem megjelöli, hogy az ellenfélnek melyik figurával kell lépnie. Ezután a játékosok felváltva lépnek. A soron következő játékos az ellenfele által kijelölt figurával köteles lépni, azt a tábla valamelyik szabad mezőjére kell tennie. A győzelemhez a következő szükséges: a tábla egyenesen, keresztben vagy átlósan négy egy vonalban levő mezőjén négy olyan figurának kell állnia, amelyek a felsorolt négy jellemző valamelyikét nézve egy csoportba tartoznak (például négy szögletes figura).";
+            MessageBox.Show(message, "Játékszabály", MessageBoxButtons.OK);
+        }
     }
 }
