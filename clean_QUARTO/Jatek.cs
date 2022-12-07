@@ -23,7 +23,7 @@ namespace clean_QUARTO
         static Button Btn;
         static Mezo Kijelolt = null;
         static int Nagyobb = 60;
-        static Point Cel = new Point(nullpoz.X + kepmeret/2 - Nagyobb / 2, nullpoz.Y + (Matrix.GetLength(0)*2-1) * (kepmeret + gap) + 20);
+        static Point Cel = new Point(nullpoz.X + kepmeret / 2 - Nagyobb / 2, nullpoz.Y + (Matrix.GetLength(0) * 2 - 1) * (kepmeret + gap) + 20);
         static int odaszamlalo = 0;
         static int leszamlalo = 0;
         static int irany = -2;
@@ -32,6 +32,7 @@ namespace clean_QUARTO
         static Mezo Megjelenitendo;
         static Point eredeti;
         static List<string> jatekosok;
+        static List<Point> Nyerteskoordinatak = new List<Point>();
 
 
         public Jatek(string player1, string player2)
@@ -42,7 +43,7 @@ namespace clean_QUARTO
             PalyaGeneralas();
             VeglegesitGomb();
             jatekosok = new List<string>() { player1, player2 };
-            playerName.Text = $"Következik:\n{jatekosok[new Random().Next(0,2)]}";
+            playerName.Text = $"Következik:\n{jatekosok[new Random().Next(0, 2)]}";
 
         }
 
@@ -51,7 +52,7 @@ namespace clean_QUARTO
             Button btn = new Button();
             btn.Size = new Size(120, 30);
             btn.Text = "Véglegesít";
-            btn.Location = new Point(nullpoz.X + kepmeret/2 - (btn.Size.Width + gap) / 2, nullpoz.Y + (Matrix.GetLength(1)*2-1) * (gap + kepmeret) + 20);
+            btn.Location = new Point(nullpoz.X + kepmeret / 2 - (btn.Size.Width + gap) / 2, nullpoz.Y + (Matrix.GetLength(1) * 2 - 1) * (gap + kepmeret) + 20);
             this.Controls.Add(btn);
             Btn = btn;
             btn.Click += delegate (object sender, EventArgs e)
@@ -115,7 +116,7 @@ namespace clean_QUARTO
                 {
                     Mezo mezo = new Mezo(new Point(sor, oszlop));
                     mezo.Size = new Size(kepmeret, kepmeret);
-                    mezo.Location = new Point(nullpoz.X - sor * ((gap+kepmeret)) + oszlop*(gap + kepmeret), nullpoz.Y + sor*(gap + kepmeret) + oszlop * (gap + kepmeret));
+                    mezo.Location = new Point(nullpoz.X - sor * ((gap + kepmeret)) + oszlop * (gap + kepmeret), nullpoz.Y + sor * (gap + kepmeret) + oszlop * (gap + kepmeret));
                     mezo.BackColor = Color.FromArgb(100, 215, 215, 215);
                     mezo.SizeMode = PictureBoxSizeMode.Zoom;
                     Matrix[sor, oszlop] = mezo;
@@ -138,18 +139,36 @@ namespace clean_QUARTO
                             ListaTimer.Start();
                             if (WinCheck(mezo))
                             {
-                                MessageBox.Show("Nyertél! ");
-                                Close();
+                                for (int i = 1; i < palyameret + 1; i++)
+                                {
+                                    Matrix[Nyerteskoordinatak[Nyerteskoordinatak.Count - i].X, Nyerteskoordinatak[Nyerteskoordinatak.Count - i].Y].BackColor = Color.HotPink;
+                                }
+                                DialogResult valasz = MessageBox.Show(jatekosok.Find(x => x == playerName.Text.Split('\n')[1]) + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (valasz == DialogResult.Yes)
+                                {
+                                    Application.Restart();
+                                }
+                                else
+                                {
+                                    Application.Exit();
+                                }
                             }
                             else if (lista.Count == 0)
                             {
-                                MessageBox.Show("Döntetlen! ");
-                                Close();
+                                DialogResult valasz = MessageBox.Show("Döntetlen!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (valasz == DialogResult.Yes)
+                                {
+                                    Application.Restart();
+                                }
+                                else
+                                {
+                                    Application.Exit();
+                                }
                             }
                         }
                     };
                     Kerekit(mezo, mezo.Size.Width);
-                    
+
                 }
             }
         }
@@ -161,11 +180,11 @@ namespace clean_QUARTO
             double xHelyzet = Kijelolt.Location.X + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Width / 2);
             double yHelyzet = Kijelolt.Location.Y + (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Kijelolt.Size.Height / 2);
             Kijelolt.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
-            
+
             size = (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (kepmeret);
             Megjelenitendo.Size = new Size(Convert.ToInt32(size), Convert.ToInt32(size));
-            xHelyzet = eredeti.X+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Width / 2);
-            yHelyzet = eredeti.Y+kepmeret/2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Height / 2);
+            xHelyzet = eredeti.X + kepmeret / 2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Width / 2);
+            yHelyzet = eredeti.Y + kepmeret / 2 - (Convert.ToDouble(jelenitszamlalo) / Convert.ToDouble(max)) * (Megjelenitendo.Size.Height / 2);
             Megjelenitendo.Location = new Point(Convert.ToInt32(xHelyzet), Convert.ToInt32(yHelyzet));
             Kerekit(Megjelenitendo, Convert.ToInt32(size));
 
@@ -201,8 +220,8 @@ namespace clean_QUARTO
             //vízszintes
             for (int j = 0; j < palyameret; j++)
             {
-                if (VizszintWinCheck(winszamlalo,mezo, j)) return true;
-                
+                if (VizszintWinCheck(winszamlalo, mezo, j)) return true;
+
             }
             //függőleges
             for (int j = 0; j < palyameret; j++)
@@ -210,7 +229,7 @@ namespace clean_QUARTO
                 if (FuggolegesWinCheck(winszamlalo, mezo, j)) return true;
             }
             //atlo1
-            if (mezo.Helyzet.X==mezo.Helyzet.Y)
+            if (mezo.Helyzet.X == mezo.Helyzet.Y)
             {
                 for (int j = 0; j < palyameret; j++)
                 {
@@ -218,7 +237,7 @@ namespace clean_QUARTO
                 }
             }
             //atlo2
-            if (mezo.Helyzet.X+mezo.Helyzet.Y==palyameret-1)
+            if (mezo.Helyzet.X + mezo.Helyzet.Y == palyameret - 1)
             {
                 for (int j = 0; j < palyameret; j++)
                 {
@@ -231,12 +250,14 @@ namespace clean_QUARTO
         private bool Atlo2WinCheck(int winszamlalo, Mezo mezo, int j)
         {
             int seged = 0;
-            for (int i = palyameret-1; i > -1; i--)
+            winszamlalo = 0;
+            for (int i = palyameret - 1; i > -1; i--)
             {
-                if (!Matrix[seged,i].Szabad)
+                if (!Matrix[seged, i].Szabad)
                 {
-                    if (Matrix[seged,i].Tipus[j] == mezo.Tipus[j])
+                    if (Matrix[seged, i].Tipus[j] == mezo.Tipus[j])
                     {
+                        Nyerteskoordinatak.Add(new Point(seged, i));
                         winszamlalo++;
                         if (winszamlalo == palyameret) return true;
                     }
@@ -249,12 +270,14 @@ namespace clean_QUARTO
 
         private bool Atlo1WinCheck(int winszamlalo, Mezo mezo, int j)
         {
+            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[i, i].Szabad)
                 {
-                    if (Matrix[i,i].Tipus[j] == mezo.Tipus[j])
+                    if (Matrix[i, i].Tipus[j] == mezo.Tipus[j])
                     {
+                        Nyerteskoordinatak.Add(new Point(i, i));
                         winszamlalo++;
                         if (winszamlalo == palyameret) return true;
                     }
@@ -266,12 +289,14 @@ namespace clean_QUARTO
 
         private bool FuggolegesWinCheck(int winszamlalo, Mezo mezo, int j)
         {
+            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[mezo.Helyzet.X, i].Szabad)
                 {
                     if (Matrix[mezo.Helyzet.X, i].Tipus[j] == mezo.Tipus[j])
                     {
+                        Nyerteskoordinatak.Add(new Point(mezo.Helyzet.X, i));
                         winszamlalo++;
                         if (winszamlalo == palyameret) return true;
                     }
@@ -283,12 +308,14 @@ namespace clean_QUARTO
 
         private bool VizszintWinCheck(int winszamlalo, Mezo mezo, int j)
         {
+            winszamlalo = 0;
             for (int i = 0; i < palyameret; i++)
             {
                 if (!Matrix[i, mezo.Helyzet.Y].Szabad)
                 {
                     if (Matrix[i, mezo.Helyzet.Y].Tipus[j] == mezo.Tipus[j])
                     {
+                        Nyerteskoordinatak.Add(new Point(i, mezo.Helyzet.Y));
                         winszamlalo++;
                         if (winszamlalo == palyameret) return true;
                     }
@@ -320,7 +347,7 @@ namespace clean_QUARTO
                 Properties.Resources.Nagy_Fekete_Teli_Négyzet
             };
 
-            Point nullpozi = new Point(nullpoz.X + kepmeret / 2 - (kepek.Count * (lentgap + Nagyobb) / 4), nullpoz.Y + (Matrix.GetLength(1)*2-1) * (gap + kepmeret) + 50);
+            Point nullpozi = new Point(nullpoz.X + kepmeret / 2 - (kepek.Count * (lentgap + Nagyobb) / 4), nullpoz.Y + (Matrix.GetLength(1) * 2 - 1) * (gap + kepmeret) + 50);
             for (int i = 0; i < kepek.Count; i++)
             {
                 Mezo mezo = new Mezo($"{((i / 8) % 2)}{(i / 4) % 2}{(i / 2) % 2}{i % 2}", new Point(-1, -1));
@@ -330,9 +357,9 @@ namespace clean_QUARTO
                 mezo.SizeMode = PictureBoxSizeMode.StretchImage;
                 mezo.Location = new Point(nullpozi.X + (i / 2) * (mezo.Size.Width + lentgap), nullpozi.Y + (i % 2 == 1 ? 0 : 1) * (mezo.Size.Width));
                 this.Controls.Add(mezo);
-                mezo.Click += delegate (object sender, EventArgs e) 
+                mezo.Click += delegate (object sender, EventArgs e)
                 {
-                    Kijelol(mezo);   
+                    Kijelol(mezo);
                 };
                 if (mezo.Tipus[3] == '1') Kerekit(mezo, mezo.Size.Width - 30);
                 else Kerekit(mezo, mezo.Size.Width);

@@ -137,8 +137,10 @@ namespace clean_QUARTO
             this.Controls.Add(this.player2Name);
             this.Controls.Add(this.player1Name);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(900, 450);
+            this.MinimumSize = new System.Drawing.Size(900, 450);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Új játék";
             this.ResumeLayout(false);
             this.PerformLayout();
 

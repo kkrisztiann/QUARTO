@@ -81,9 +81,11 @@ namespace clean_QUARTO
             this.ClientSize = new System.Drawing.Size(684, 881);
             this.Controls.Add(this.playerName);
             this.Controls.Add(this.hatter);
+            this.MaximumSize = new System.Drawing.Size(700, 920);
+            this.MinimumSize = new System.Drawing.Size(700, 920);
             this.Name = "Jatek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jatek";
+            this.Text = "QUARTO!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Jatek_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.hatter)).EndInit();
             this.ResumeLayout(false);

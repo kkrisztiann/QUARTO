@@ -53,3 +53,14 @@ D:\BG\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.GenerateResource.cache
 D:\BG\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.CoreCompileInputs.cache
 D:\BG\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.exe
 D:\BG\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.pdb
+D:\Quarto\QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.exe.config
+D:\Quarto\QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.exe
+D:\Quarto\QUARTO\clean_QUARTO\bin\Debug\clean_QUARTO.pdb
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.AssemblyReference.cache
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Form1.resources
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Jatek.resources
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.Properties.Resources.resources
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.GenerateResource.cache
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.csproj.CoreCompileInputs.cache
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.exe
+D:\Quarto\QUARTO\clean_QUARTO\obj\Debug\clean_QUARTO.pdb
